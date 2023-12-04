@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="ML.css" media="screen"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .janela-modal {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    
+    
+    <div class="btn-container">
+        <div class="btn" id="abrirModalBtn1">Oque é?</div>
+        <div class="btn" id="abrirModalBtn2">Para que serve?</div>
+        <div class="btn" id="abrirModalBtn3">Uma curiosidade</div>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fecharModalBtn">&times;</button>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalConteudo"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir a janela modal
+        function abrirModal(id, titulo, conteudo) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalConteudo').innerText = conteudo;
+            document.getElementById('janela-modal').style.display = 'block';
+        }
+
+        // Função para fechar a janela modal
+        function fecharModal() {
+            document.getElementById('janela-modal').style.display = 'none';
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById('abrirModalBtn1').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Oque é ?', 'Machine Learning é uma disciplina da área da Inteligência Artificial que, por meio de algoritmos.');
+        });
+
+        document.getElementById('abrirModalBtn2').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Para que serve?', 'Serve para dar aos computadores a capacidade de identificar padrões em dados massivos e fazer previsões (análise preditiva).');
+        });
+
+        document.getElementById('abrirModalBtn3').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Aprendizado Supervisionado e Não Supervisionado:', 'O Machine Learning é geralmente categorizado em dois tipos principais: aprendizado supervisionado e não supervisionado. No aprendizado supervisionado, o modelo é treinado usando um conjunto de dados rotulado, onde a saída desejada é conhecida. No aprendizado não supervisionado, o modelo é alimentado com dados não rotulados e é deixado para identificar padrões e estruturas por conta própria.');
+        });
+
+        // Adicionar evento de clique ao botão de fechar modal
+        document.getElementById('fecharModalBtn').addEventListener('click', fecharModal);
+    </script>   
+</body>
+</html>

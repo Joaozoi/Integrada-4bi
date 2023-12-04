@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ciências da Natureza</title>
+
+    <link rel="stylesheet" type="text/css" href="CN.css" media="screen"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .janela-modal {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Ciencias da Natureza</h1>
+    
+    <div class="btn-container">
+        <div class="btn" id="abrirModalBtn1">Trabalho 1</div>
+        <div class="btn" id="abrirModalBtn2">Trabalho 2</div>
+        <div class="btn" id="abrirModalBtn3">Trabalho 3</div>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fecharModalBtn">&times;</button>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalConteudo"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir a janela modal
+        function abrirModal(id, titulo, conteudo) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalConteudo').innerText = conteudo;
+            document.getElementById('janela-modal').style.display = 'block';
+        }
+
+        // Função para fechar a janela modal
+        function fecharModal() {
+            document.getElementById('janela-modal').style.display = 'none';
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById('abrirModalBtn1').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Experimento Eletromagnetismo', 'Consistia em apresentar o seu experimento (em grupo) na sala durante a aula, onde montamos um detector de metal mobile, esse trabalho foi realizado no quarto bimestre deste ano');
+        });
+
+        document.getElementById('abrirModalBtn2').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Olimpiadas de CN', 'Esse trabalho foi a integrada do terceiro bimestre desse ano, gostei bastante de realiza-la por ser uma experiência diferente e divertida pela metedologia de ter uma "prova" como avalição');
+        });
+
+        document.getElementById('abrirModalBtn3').addEventListener('click', function() {
+            abrirModal('janela-modal', 'QUÍMICA - FOTO DO ÁTOMO', 'Entramos em um site atribuido pelo professor onde clicamos em um elemento e tiramos uma foto em RA pelo Senac em busca de tirar fotos de atomos');
+        });
+
+        // Adicionar evento de clique ao botão de fechar modal
+        document.getElementById('fecharModalBtn').addEventListener('click', fecharModal);
+    </script>
+
+
+
+</body>
+</html>

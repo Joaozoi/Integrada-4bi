@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realidade Aumentada</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="RA.css" media="screen"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .janela-modal {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Realidade Aumentada</h1>
+    
+    <div class="btn-container">
+        <div class="btn" id="abrirModalBtn1">Oque é?</div>
+        <div class="btn" id="abrirModalBtn2">Para que serve?</div>
+        <div class="btn" id="abrirModalBtn3">Uma curiosidade</div>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fecharModalBtn">&times;</button>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalConteudo"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir a janela modal
+        function abrirModal(id, titulo, conteudo) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalConteudo').innerText = conteudo;
+            document.getElementById('janela-modal').style.display = 'block';
+        }
+
+        // Função para fechar a janela modal
+        function fecharModal() {
+            document.getElementById('janela-modal').style.display = 'none';
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById('abrirModalBtn1').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Oque é ?', 'A realidade aumentada (RA) é uma tecnologia que mistura o mundo real ao virtual. Seja via câmeras de celulares ou de dispositivos específicos, como óculos de VR, o recurso insere elementos 3D em ambientes verdadeiros, criando uma experiência sensorial mista. O sistema tem diversos exemplos possíveis de uso, podendo ser explorada em diversos setores, como no turismo, comércio e até mesmo na medicina.  ');
+        });
+
+        document.getElementById('abrirModalBtn2').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Para que serve?', 'A realidade aumentada é uma versão aprimorada e interativa de um ambiente real obtido por meio de elementos visuais, sonoros e outros estímulos sensoriais digitais por meio de tecnologia holográfica.');
+        });
+
+        document.getElementById('abrirModalBtn3').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Integração com Internet das Coisas (IoT):', 'A integração da RA com a Internet das Coisas (IoT) permite uma experiência mais rica e contextualizada. Dispositivos de RA podem interagir com sensores e dados do ambiente, proporcionando informações em tempo real e melhorando a tomada de decisões. Por exemplo, em um ambiente de manufatura, a RA pode exibir dados de desempenho de máquinas diretamente sobre os equipamentos.');
+        });
+
+        // Adicionar evento de clique ao botão de fechar modal
+        document.getElementById('fecharModalBtn').addEventListener('click', fecharModal);
+    </script>   
+</body>
+</html>

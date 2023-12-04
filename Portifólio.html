@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="Portifólio.css" />
+    <style>
+      /* Estilo para a barra de navegação */
+      nav {
+        background-color: #05ffff;
+        padding: 1rem;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      .nav__content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo a {
+        text-decoration: none;
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .checkbox {
+        cursor: pointer;
+        font-size: 1.5rem;
+      }
+
+      ul {
+        list-style: none;
+        display: flex;
+        gap: 1rem;
+      }
+
+      ul li a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+        font-size: 1rem;
+      }
+
+      /* Adicionado estilo para a seção de Contato */
+      #contato {
+        padding-top: 80px; /* Ajuste conforme necessário para acomodar a barra de navegação fixa */
+      }
+    </style>
+    <title>Portifólio</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__content">
+        <div class="logo"><a href="#">Senac</a></div>
+        <label for="check" class="checkbox">
+          <i class="ri-menu-line"></i>
+        </label>
+        <input type="checkbox" name="check" id="check" />
+        <ul>
+       
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="section">
+      <div class="section__container">
+        <div class="content">
+          <p class="subtitle">Olá</p>
+          <h1 class="title">
+            Eu sou <span>João Pedro Zabarella MUniz<br /></span> Estudante de programação
+          </h1>
+          <p class="description">
+            Seja bem-vindo ao meu portfólio, sou atualmente um estudante de programação do Senac Nações Unidas, em busca de me especializar na área para sempre refinar minhas habilidades cada vez mais
+          </p>
+          <div class="action__btns">
+            <button class="hire__me" onclick="window.open('//www.linkedin.com/in/jpzm12/')">Linkedin</button>
+          
+            <button class="portfolio" onclick="window.open('https://github.com/Joaozoi', '_blank')">GitHub</button>
+
+          </div>
+        </div>
+        <div class="image">
+          <img src="opa.png" alt="profile" />
+        </div>
+      </div>
+    </section>
+
+
+    </section>
+  </body>
+</html>

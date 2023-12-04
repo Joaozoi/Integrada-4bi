@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inteligência Artificial</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="IA.css" media="screen"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .janela-modal {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Inteligência Artificial</h1>
+    
+    <div class="btn-container">
+        <div class="btn" id="abrirModalBtn1">Oque é?</div>
+        <div class="btn" id="abrirModalBtn2">Para que serve?</div>
+        <div class="btn" id="abrirModalBtn3">Uma curiosidade</div>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fecharModalBtn">&times;</button>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalConteudo"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir a janela modal
+        function abrirModal(id, titulo, conteudo) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalConteudo').innerText = conteudo;
+            document.getElementById('janela-modal').style.display = 'block';
+        }
+
+        // Função para fechar a janela modal
+        function fecharModal() {
+            document.getElementById('janela-modal').style.display = 'none';
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById('abrirModalBtn1').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Oque é ?', 'Inteligência artificial é a capacidade de dispositivos eletrônicos de funcionar de uma maneira que lembra o pensamento humano. Isso implica em perceber variáveis, tomar decisões e resolver problemas.');
+        });
+
+        document.getElementById('abrirModalBtn2').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Para que serve?', 'A inteligência artificial (IA) possibilita que máquinas aprendam com experiências, se ajustem a novas entradas de dados e performem tarefas como seres humanos.');
+        });
+
+        document.getElementById('abrirModalBtn3').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Ética em IA e Viés Algorítmico:', 'À medida que a IA se torna mais prevalente, questões éticas emergem. A discussão sobre a ética em IA abrange tópicos como transparência, responsabilidade, privacidade e viés algorítmico. Os algoritmos de IA podem herdar preconceitos presentes nos dados de treinamento, levando a decisões discriminatórias. Isso destaca a importância de abordar cuidadosamente questões éticas para garantir que a IA seja usada de maneira justa e responsável.');
+        });
+
+        // Adicionar evento de clique ao botão de fechar modal
+        document.getElementById('fecharModalBtn').addEventListener('click', fecharModal);
+    </script>   
+</body>
+</html>

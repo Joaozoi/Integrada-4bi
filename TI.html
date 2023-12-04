@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TI</title>
+</head>
+<body>
+    <link rel="stylesheet" type="text/css" href="TI.css" media="screen"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .janela-modal {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TI</h1>
+    
+    <div class="btn-container">
+        <div class="btn" id="abrirModalBtn1">Trabalho 1</div>
+        <div class="btn" id="abrirModalBtn2">Trabalho 2</div>
+        <div class="btn" id="abrirModalBtn3">Trabalho 3</div>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fecharModalBtn">&times;</button>
+            <h2 id="modalTitulo"></h2>
+            <p id="modalConteudo"></p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir a janela modal
+        function abrirModal(id, titulo, conteudo) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalConteudo').innerText = conteudo;
+            document.getElementById('janela-modal').style.display = 'block';
+        }
+
+        // Função para fechar a janela modal
+        function fecharModal() {
+            document.getElementById('janela-modal').style.display = 'none';
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById('abrirModalBtn1').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Represemtear o cabeamento estruturado do Senac pelo Minecraft', 'Esse trabalho foi no quarto bimestre do ano passado, onde tinhamos que representar dentro do minecraft o cabeamento estruturado do Senac e colocar onde estafaltando, como exemplo o centro esportivo.');
+        });
+
+        document.getElementById('abrirModalBtn2').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Programação em de um aplicativo de streaming ', 'Este trabalho foi no terceiro bimestre do terceiro ano, gostei muito pois foi um trabalho em que me superei e consegui criar juntamente do Bruno uma "Netflix" apenas usando python e SQL.');
+        });
+
+        document.getElementById('abrirModalBtn3').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Jogo quiz usando Java', 'Esse trbaalho tinhamos que criar um jogo quiz com perguntas de alguma materia escolhida (no meu caso foi um quiz sobre matemática) onde usamos Java e o construct para crianção dele. Fiquei muito satisfeito com o resultado');
+        });
+
+        // Adicionar evento de clique ao botão de fechar modal
+        document.getElementById('fecharModalBtn').addEventListener('click', fecharModal);
+    </script>
+
+    
+
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Matemática</title>
+
+    <link rel="stylesheet" type="text/css" href="Mat.css" media="screen"/>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-right: 10px;
+            cursor: pointer;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .janela-modal {
+            display: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Matemática</h1>
+    
+    <div class="btn-container">
+        <div class="btn" id="abrirModalBtn1">Trabalho 1</div>
+        <div class="btn" id="abrirModalBtn2">Trabalho 2</div>
+        <div class="btn" id="abrirModalBtn3">Trabalho 3</div>
+    </div>
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="modal">
+            <button class="fechar" id="fecharModalBtn">&times;</button>
+            <h2 id="modalTitulo">Teodolito</h2>
+            <p id="modalConteudo"> </p>
+        </div>
+    </div>
+
+    <script>
+        // Função para abrir a janela modal
+        function abrirModal(id, titulo, conteudo) {
+            document.getElementById('modalTitulo').innerText = titulo;
+            document.getElementById('modalConteudo').innerText = conteudo;
+            document.getElementById('janela-modal').style.display = 'block';
+        }
+
+        // Função para fechar a janela modal
+        function fecharModal() {
+            document.getElementById('janela-modal').style.display = 'none';
+        }
+
+        // Adicionar eventos de clique aos botões
+        document.getElementById('abrirModalBtn1').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Teodolito', 'Consistia em criar uma ferramenta com base se um pedaço de papelão, um esquadro, um barbante e uma borracha. Com o intuito de conseguir medir qualquer estrutura pela rua sem precisar de qualquer meio de medição mais complexo');
+        });
+
+        document.getElementById('abrirModalBtn2').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Forms sobre renda familiar e estudos', 'Esse trabalho foi mais recente, onde eu e meu grupo tivenos que sair pelo Senac compartilhando um forms onde continham perguntas sobre como era a locomoção de cada um para o Senac, suas rotinas e se afeta muito as seus aprendizados com suas condições financeiras');
+        });
+
+        document.getElementById('abrirModalBtn3').addEventListener('click', function() {
+            abrirModal('janela-modal', 'Medidas de tendência central', 'Neste ultimo trabalho, basicamente revisamos sobre a famosa média, moda e mediana. Respondemos um forms onde respondemos 10 questões giganetescas sobre esses 3 tópicos, acredito ter sido o forms mais demorado que realizei. Porém gostei muito de ter feito');
+        });
+
+        // Adicionar evento de clique ao botão de fechar modal
+        document.getElementById('fecharModalBtn').addEventListener('click', fecharModal);
+    </script>
+
+
+
+</body>
+</html>
